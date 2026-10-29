@@ -3,9 +3,10 @@ import pandas as pd
 from datetime import date, datetime, timedelta
 import plotly.express as px
 import requests
-
-st.set_page_config(page_title="KIAMBU COFFEE FARMS", layout="wide", page_icon="☕")
-
+st.set_page_config(page_title="KIAMBU COFFEE FARMS", page_icon="kcf_logo.png", layout="wide")
+st.sidebar.image("kcf_logo.png", use_container_width=True)
+with open("kcf_logo.png", "rb") as f:
+    st.sidebar.download_button("👆 Click Logo to Save KCF Logo", f, file_name="KCF_Logo.png", mime="image/png")
 # ===== SESSION STATE - CORRECTED =====
 if 'users' not in st.session_state:
     st.session_state.users = {"Kitonyi": {"password": "Kejinho@100%", "farm": "1", "phone": "0706144440"}}
